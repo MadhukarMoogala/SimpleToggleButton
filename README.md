@@ -90,7 +90,7 @@ Expected Build Log:  here
   
   ### Demo
   
-  <img src="https://github.com/MadhukarMoogala/SimpleToggleButton/blob/master/Toggle.gif" width="100" height="100">
+  <img src="https://github.com/MadhukarMoogala/SimpleToggleButton/blob/master/Toggle.gif" width="450" height="450">
 
 ### License
 
