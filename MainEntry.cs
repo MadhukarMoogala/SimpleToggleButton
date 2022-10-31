@@ -38,7 +38,6 @@ namespace SimpleToggleButton
         public void Initialize()
         {
 
-
             //RibbonContent.AddRibbonControls("Xyz", "pack://application:,,,/SimpleToggleButton;component/XyzControls.xaml");
 
             //Ideally adding ribboncontrol through API should work, for some reason, the RibbonControl is not registering correctly.
@@ -49,12 +48,12 @@ namespace SimpleToggleButton
             //2. You can also register through win32 Registry API, requires admin access.
             //CreateSystemVariable();
             /*RegisterRibbonControl();*/
-            AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
+            //AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
 
         }
         public void Terminate()
         {
-            AppDomain.CurrentDomain.AssemblyResolve -= new ResolveEventHandler(CurrentDomain_AssemblyResolve);
+            //AppDomain.CurrentDomain.AssemblyResolve -= new ResolveEventHandler(CurrentDomain_AssemblyResolve);
         }
         public void CreateSystemVariable()
         {

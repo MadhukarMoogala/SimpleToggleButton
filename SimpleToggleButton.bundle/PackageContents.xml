@@ -68,7 +68,7 @@
         <RuntimeRequirements
             OS="Win64"
             Platform="AutoCAD*"
-            SeriesMin="R20"
+            SeriesMin="R23.2"
         />
         <ComponentEntry
             AppName="ToggleCuix"
