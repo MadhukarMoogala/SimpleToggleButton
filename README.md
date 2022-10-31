@@ -87,6 +87,10 @@ Expected Build Log:  here
 - Copy `SimpleToggleButton.bundle`to %APPDATA%\Autodesk\ApplicationPlugins
 
 - Launch AutoCAD
+  
+  ### Demo
+  
+  <img src="https://github.com/MadhukarMoogala/SimpleToggleButton/blob/master/Toggle.gif" width="100" height="100">
 
 ### License
 
