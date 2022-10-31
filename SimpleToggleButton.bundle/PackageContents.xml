@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ApplicationPackage
+    SchedmaVersion="1.0"
+    Version="1.0"
+    ProductCode="{2BE44352-0C64-47EF-8E0B-8710CFE49A79}"
+    HelpFile="./Contents/Help/SimpleToggleButton.htm"
+    Name="SimpleToggleButton"
+    Description="AutoCAD Custom Toggle Button"
+    Author="Anonymous" >
+    <CompanyDetails
+        Name="Autodesk, Inc"
+        Phone="415.555.5555"
+        Url="www.autodesk.com"
+        Email="" />
+    <!--
+    .NET/WPF App
+    -->
+    <Components>
+        <RuntimeRequirements
+            OS="Win64"
+            Platform="AutoCAD*"
+            SeriesMin="R23.2"
+        />
+        <!--
+        Define a new XYZSTATE system variable to be used for data binding in
+        the custom ribbon control.
+        -->
+        <SystemVariables>
+            <SystemVariable
+                Name="XYZSTATE"
+                PrimaryType="Int16"
+                StorageType="Profile"
+                Value="0"
+                Range="0,1"
+            />
+        </SystemVariables>
+        <ComponentEntry
+            AppName="SimpleToggleButton"
+            ModuleName="./Contents/SimpleToggleButton.dll"
+            AppDescription="SimpleToggleButton"
+            LoadOnAutoCADStartup="True"
+            >
+            <!--Through Code.
+            <Commands GroupName="Toggle">
+                <Command Global="RBTOGGLE" Local="RBTOGGLE" />
+            </Commands>
+            -->
+            <!--
+            Register "Xyz" prefix for custom ribbon controls
+            -->
+            <RibbonControls>
+                <RibbonControl Name="Xyz" Path="pack://application:,,,/SimpleToggleButton;component/XyzControls.xaml"/>
+            </RibbonControls>
+            <AssemblyMappings>
+                <AssemblyMapping Name="Xyz.resources" Path="./Contents/en-US/SimpleToggleButton.resources.dll" />
+            </AssemblyMappings>
+        </ComponentEntry>
+        <ComponentEntry
+            AppName="SimpleToggleButton.resources.dll"
+            AppType="Dependency"
+            ModuleName="./Contents/en-US/SimpleToggleButton.resources.dll"
+            AppDescription="SimpleToggleButton.resources.dll"
+            LoadOnAutoCADStartup="False"
+        />
+    </Components>
+    <!-- CUIX -->
+    <Components>
+        <RuntimeRequirements
+            OS="Win64"
+            Platform="AutoCAD*"
+            SeriesMin="R20"
+        />
+        <ComponentEntry
+            AppName="ToggleCuix"
+            AppDescription="Simple Toggle Button Partial CUI"
+            ModuleName="./Contents/Toggle.cuix"
+            LoadOnAutoCADStartup="True"
+        />
+    </Components>
+</ApplicationPackage>

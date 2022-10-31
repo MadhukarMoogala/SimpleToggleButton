@@ -1,0 +1,29 @@
+﻿<ResourceDictionary x:Uid="ResourceDictionary_1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:acmgd="clr-namespace:Autodesk.AutoCAD.ApplicationServices;assembly=acmgd"
+    xmlns:adw="clr-namespace:Autodesk.Windows;assembly=AdWindows" 
+    xmlns:xyz="clr-namespace:SimpleToggleButton" >
+
+    <xyz:ToggleButtonConverter
+        x:Uid="ToggleButtonConverter_1" 
+        x:Key="XyzToggleButtonConverter"
+        OnMacro="_XYZSTATE 1 "
+        OffMacro="_XYZSTATE 0 "
+    />
+
+    <adw:RibbonToggleButton 
+        x:Uid="RibbonToggleButton-Xyz" 
+        x:Key="XyzToggleButton"
+        Name="XYZ Toggle"
+        Tag="XYZSTATE">
+        <adw:RibbonToggleButton.IsCheckedBinding>
+            <Binding Source="{x:Static acmgd:Application.UIBindings}" Path="SystemVariables[XYZSTATE].Value" Converter="{StaticResource XyzToggleButtonConverter}"/>
+        </adw:RibbonToggleButton.IsCheckedBinding>
+        <adw:RibbonToggleButton.Image>
+            <BitmapImage x:Uid="BitmapImage_1" UriSource="Resources/Toggle.bmp" />
+        </adw:RibbonToggleButton.Image>
+        <adw:RibbonToggleButton.LargeImage>
+            <BitmapImage x:Uid="BitmapImage_2" UriSource="Resources/Toggle.bmp"/>
+        </adw:RibbonToggleButton.LargeImage>
+    </adw:RibbonToggleButton>
+</ResourceDictionary>
